@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma Educativa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>📚 Aprende y Practica</h1>
+<p class="subtitulo">Ejercicios creados por tus docentes</p>
+
+<section>
+    <h2>🧮 Matemáticas</h2>
+    <!-- DOCENTES ESCRIBEN AQUÍ -->
+    <p id="pregunta-mat">ESCRIBE AQUÍ EL EJERCICIO DE MATEMÁTICAS</p>
+    <input type="text" id="respuesta-mat" placeholder="Escribe tu respuesta">
+</section>
+
+<section>
+    <h2>📘 Español</h2>
+    <!-- DOCENTES ESCRIBEN AQUÍ -->
+    <p id="pregunta-esp">ESCRIBE AQUÍ EL EJERCICIO DE ESPAÑOL</p>
+    <input type="text" id="respuesta-esp" placeholder="Escribe tu respuesta">
+</section>
+
+<button onclick="evaluar()">Revisar respuestas</button>
+
+<div id="resultado"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
