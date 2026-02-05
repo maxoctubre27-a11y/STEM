@@ -1,0 +1,31 @@
+async function evaluar() {
+    const mat = document.getElementById("respuesta-mat").value;
+    const esp = document.getElementById("respuesta-esp").value;
+
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = "⏳ Revisando respuestas...";
+
+    const prompt = `
+Eres un maestro de sexto de primaria.
+Explica de forma sencilla si las respuestas están bien o mal.
+No uses lenguaje científico.
+
+Matemáticas: ${mat}
+Español: ${esp}
+`;
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer TU_API_KEY_AQUÍ"
+        },
+        body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [{ role: "user", content: prompt }]
+        })
+    });
+
+    const data = await response.json();
+    resultado.innerText = data.choices[0].message.content;
+}
